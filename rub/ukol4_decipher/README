@@ -1,3 +1,4 @@
 == decipher
 
-Decipher prints also non-printable characters
+Decipher prints also non-printable characters.
+Run ./bin/decipher.rb
