@@ -1,4 +1,4 @@
-== Rectangles
+== Coverage
 
 Input is read from file defined in ./bin/coverage.rb in variable FILE_NAME.
 Run ./bin/coverage.rb
