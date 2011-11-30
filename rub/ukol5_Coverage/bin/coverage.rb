@@ -3,7 +3,7 @@
 ##
 
 require '../lib/coverage/runner'
-FILE_NAME = './inputFiles/test_singlesolution.txt'
+FILE_NAME = '../lib/inputFiles/test_singlesolution.txt'
 
 runner = Coverage::Runner.new(FILE_NAME)
 runner.run()
