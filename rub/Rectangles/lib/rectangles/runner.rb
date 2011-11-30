@@ -1,5 +1,6 @@
 
 require_relative 'core'
+require_relative 'rectangle'
 
 module Rectangles
   class Runner

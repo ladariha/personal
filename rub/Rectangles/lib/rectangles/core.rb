@@ -6,15 +6,16 @@ module Rectangles
         x_overlap = min( rec1.right_x, rec2.right_x )-max(rec1.left_x, rec2.left_x )
         y_overlap = min( rec1.upper_y, rec2.upper_y)-max( rec2.down_y, rec1.down_y)
         overlap = x_overlap*y_overlap
-        tog = (rec1.right_x - rec1.left_x)*(rec1.right_x - rec1.left_x)+(rec2.right_x - rec2.left_x)*(rec2.right_x - rec2.left_x) - overlap
-        print "Obsah sjednoceni dvou ctvercu je "+tog.to_s
+        area = (rec1.side_length*rec1.side_length)+(rec2.side_length*rec2.side_length)
+        complet = area - overlap
+        print "Obsah sjednoceni dvou ctvercu je "+complet.to_s
       else
-        if(rec1.istouching(rec2))
-          
+        if(rec1.istouching(rec2)) # just in case...
+          area = (rec1.side_length*rec1.side_length)+(rec2.side_length*rec2.side_length)
+           print "Obsah sjednoceni dvou ctvercu je "+area.to_s
         else
           print "Ctverce se ani nedotykaji"
         end
-
       end
     end
     
