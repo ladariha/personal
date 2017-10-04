@@ -1,0 +1,323 @@
+{
+    "paragraphs": [{
+        "title": "MD paragraph",
+        "text": "%md\n## Ahoj ##\nTabulka:\n|bunka 11| bunka 12|\n|bunka 21| bunka 22|\n\nTohle je list:\n* polozka bez cisla\n  * poduroven\n* a jeste jedna",
+        "dateUpdated": "2017-09-14T14:13:30+0000",
+        "config": {
+            "tableHide": false,
+            "editorSetting": {
+                "language": "text",
+                "editOnDblClick": false
+            },
+            "colWidth": 12,
+            "editorMode": "ace/mode/text",
+            "editorHide": false,
+            "title": true,
+            "results": {},
+            "enabled": true
+        },
+        "settings": {
+            "params": {},
+            "forms": {}
+        },
+        "results": {
+            "code": "SUCCESS",
+            "msg": [{
+                "type": "HTML",
+                "data": "<div class=\"markdown-body\">\n<h2>Ahoj</h2>\n<p>Tabulka:<br/>|bunka 11| bunka 12|<br/>|bunka 21| bunka 22|</p>\n<p>Tohle je list:<br/>* polozka bez cisla<br/> * poduroven<br/>* a jeste jedna</p>\n</div>"
+            }]
+        },
+        "apps": [],
+        "jobName": "paragraph_1505398410287_-193372431",
+        "id": "20170907-095605_338474600",
+        "dateCreated": "2017-09-14T14:13:30+0000",
+        "status": "READY",
+        "errorMessage": "",
+        "progressUpdateIntervalMs": 500,
+        "focus": true,
+        "$$hashKey": "object:2504"
+    }, {
+        "title": "Impersonation paragraph",
+        "text": "println(s\"Current user:      ${sc.sparkUser}\")",
+        "dateUpdated": "2017-09-14T14:13:30+0000",
+        "config": {
+            "tableHide": false,
+            "editorSetting": {
+                "language": "text",
+                "editOnDblClick": false
+            },
+            "colWidth": 4,
+            "editorMode": "ace/mode/text",
+            "editorHide": false,
+            "title": true,
+            "results": {},
+            "enabled": true
+        },
+        "settings": {
+            "params": {},
+            "forms": {}
+        },
+        "results": {
+            "code": "SUCCESS",
+            "msg": [{
+                "type": "TEXT",
+                "data": "Current user:      bigdatamgr\n"
+            }]
+        },
+        "apps": [],
+        "jobName": "paragraph_1505398410288_-182984211",
+        "id": "20170905-074619_1545139215",
+        "dateCreated": "2017-09-14T14:13:30+0000",
+        "status": "READY",
+        "errorMessage": "",
+        "progressUpdateIntervalMs": 500,
+        "$$hashKey": "object:2505"
+    }, {
+        "title": "Bash paragraph",
+        "text": "%sh\nwhoami",
+        "dateUpdated": "2017-09-14T14:13:30+0000",
+        "config": {
+            "editorSetting": {
+                "language": "text",
+                "editOnDblClick": false
+            },
+            "colWidth": 4,
+            "editorMode": "ace/mode/text",
+            "editorHide": false,
+            "title": true,
+            "results": {
+                "0": {
+                    "graph": {
+                        "mode": "table",
+                        "height": 253.14999999999998,
+                        "optionOpen": false
+                    }
+                }
+            },
+            "enabled": true
+        },
+        "settings": {
+            "params": {},
+            "forms": {}
+        },
+        "results": {
+            "code": "SUCCESS",
+            "msg": [{
+                "type": "TEXT",
+                "data": "bigdatanotebook\n"
+            }]
+        },
+        "apps": [],
+        "jobName": "paragraph_1505398410289_-183368960",
+        "id": "20170907-075251_1467145320",
+        "dateCreated": "2017-09-14T14:13:30+0000",
+        "status": "READY",
+        "errorMessage": "",
+        "progressUpdateIntervalMs": 500,
+        "$$hashKey": "object:2506"
+    }, {
+        "title": "HDFS permissions paragraph",
+        "text": "println(\"If the spark context is under a different user than 'bigdatamgr', this paragrapth should throw an error1.\\n-------------------------------------------------------------------------------------\\n\\n\")\nval pokus = sc.textFile(\"hdfs:///user/bigdatamgr/pokus\")\nprintln(s\"Number of lines: ${pokus.count()}\")",
+        "dateUpdated": "2017-09-14T14:13:30+0000",
+        "config": {
+            "tableHide": false,
+            "editorSetting": {
+                "language": "text",
+                "editOnDblClick": false
+            },
+            "colWidth": 4,
+            "editorMode": "ace/mode/text",
+            "editorHide": false,
+            "title": true,
+            "results": {},
+            "enabled": true
+        },
+        "settings": {
+            "params": {},
+            "forms": {}
+        },
+        "results": {
+            "code": "SUCCESS",
+            "msg": [{
+                "type": "TEXT",
+                "data": "If the spark context is under a different user than 'bigdatamgr', this paragrapth should throw an error1.\n-------------------------------------------------------------------------------------\n\n\n\npokus: org.apache.spark.rdd.RDD[String] = hdfs:///user/bigdatamgr/pokus MapPartitionsRDD[1] at textFile at <console>:29\nNumber of lines: 1\n"
+            }]
+        },
+        "apps": [],
+        "jobName": "paragraph_1505398410289_-183368960",
+        "id": "20170907-101046_407710206",
+        "dateCreated": "2017-09-14T14:13:30+0000",
+        "status": "READY",
+        "errorMessage": "",
+        "progressUpdateIntervalMs": 500,
+        "$$hashKey": "object:2507"
+    }, {
+        "title": "Scala paragraph (prepares the table for the SQL paragraph)",
+        "text": "val trainText = sc.textFile(\"hdfs:///user/zdenek/train.csv\")\n\ncase class TaxiTrip(\n    id: String,\n    vendor_id: String,\n    pickup_datetime: String,\n    dropoff_datetime: String,\n    passenger_count: Integer,\n    pickup_longitude: String,\n    pickup_latitude: String,\n    dropoff_longitude: String,\n    dropoff_latitude: String,\n    store_and_fwd_flag: String,\n    trip_duration: Double\n)\n\nval trips = trainText\n    .map(s => s.split(\",\"))\n    .filter(s => s.size == 11)\n    .filter(s => s(0) != \"id\")\n    .map(s => TaxiTrip(\n            s(0),\n            s(1),\n            s(2),\n            s(3),\n            s(4).toInt,\n            s(5),\n            s(6),\n            s(7),\n            s(8),\n            s(9),\n            s(10).toDouble\n        )\n    )\n    .toDF()\ntrips.registerTempTable(\"trips\")\n",
+        "dateUpdated": "2017-09-14T14:13:30+0000",
+        "config": {
+            "lineNumbers": true,
+            "tableHide": false,
+            "editorSetting": {
+                "language": "text",
+                "editOnDblClick": false
+            },
+            "colWidth": 12,
+            "editorMode": "ace/mode/text",
+            "editorHide": false,
+            "title": true,
+            "results": {},
+            "enabled": true
+        },
+        "settings": {
+            "params": {},
+            "forms": {}
+        },
+        "results": {
+            "code": "SUCCESS",
+            "msg": [{
+                "type": "TEXT",
+                "data": "\ntrainText: org.apache.spark.rdd.RDD[String] = hdfs:///user/zdenek/train.csv MapPartitionsRDD[3] at textFile at <console>:29\n\ndefined class TaxiTrip\n\ntrips: org.apache.spark.sql.DataFrame = [id: string, vendor_id: string, pickup_datetime: string, dropoff_datetime: string, passenger_count: int, pickup_longitude: string, pickup_latitude: string, dropoff_longitude: string, dropoff_latitude: string, store_and_fwd_flag: string, trip_duration: double]\n"
+            }]
+        },
+        "apps": [],
+        "jobName": "paragraph_1505398410290_-182214713",
+        "id": "20170905-074156_190598840",
+        "dateCreated": "2017-09-14T14:13:30+0000",
+        "status": "READY",
+        "errorMessage": "",
+        "progressUpdateIntervalMs": 500,
+        "$$hashKey": "object:2508"
+    }, {
+        "title": "SQL paragraph",
+        "text": "%sql\nselect trip_duration, count(*) as cnt\nfrom trips\ngroup by trip_duration \norder by trip_duration desc",
+        "dateUpdated": "2017-09-14T14:13:30+0000",
+        "config": {
+            "editorSetting": {
+                "language": "text",
+                "editOnDblClick": false
+            },
+            "colWidth": 8,
+            "editorMode": "ace/mode/text",
+            "editorHide": false,
+            "title": true,
+            "results": {
+                "0": {
+                    "graph": {
+                        "mode": "multiBarChart",
+                        "height": 238.15,
+                        "optionOpen": false
+                    },
+                    "helium": {}
+                }
+            },
+            "enabled": true
+        },
+        "settings": {
+            "params": {},
+            "forms": {}
+        },
+        "results": {
+            "code": "SUCCESS",
+            "msg": [{
+                "type": "TABLE",
+                "data": "trip_duration\tcnt\n3526282.0\t1\n2227612.0\t1\n2049578.0\t1\n1939736.0\t1\n86392.0\t1\n86391.0\t1\n86390.0\t1\n86387.0\t1\n86385.0\t1\n86379.0\t1\n86378.0\t2\n86377.0\t2\n86369.0\t4\n86367.0\t2\n86366.0\t1\n86365.0\t1\n86364.0\t2\n86363.0\t1\n86362.0\t4\n86361.0\t3\n86360.0\t1\n86358.0\t3\n86357.0\t3\n86356.0\t4\n86355.0\t1\n86354.0\t4\n86353.0\t3\n86352.0\t5\n86351.0\t3\n86350.0\t1\n86349.0\t2\n86348.0\t2\n86347.0\t2\n86346.0\t6\n86345.0\t4\n86344.0\t5\n86343.0\t2\n86342.0\t3\n86341.0\t3\n86340.0\t8\n86339.0\t7\n86338.0\t2\n86337.0\t4\n86336.0\t6\n86335.0\t2\n86334.0\t3\n86333.0\t2\n86332.0\t3\n86331.0\t5\n86330.0\t2\n86329.0\t5\n86328.0\t1\n86327.0\t8\n86326.0\t1\n86325.0\t7\n86324.0\t5\n86323.0\t3\n86322.0\t4\n86321.0\t4\n86320.0\t3\n86319.0\t4\n86318.0\t7\n86317.0\t5\n86316.0\t4\n86315.0\t6\n86314.0\t7\n86313.0\t2\n86312.0\t5\n86311.0\t4\n86310.0\t2\n86309.0\t4\n86308.0\t4\n86307.0\t6\n86306.0\t2\n86305.0\t2\n86304.0\t4\n86303.0\t4\n86302.0\t3\n86301.0\t6\n86299.0\t4\n86298.0\t1\n86297.0\t3\n86296.0\t3\n86295.0\t5\n86294.0\t2\n86293.0\t4\n86292.0\t3\n86291.0\t6\n86290.0\t4\n86289.0\t6\n86288.0\t5\n86287.0\t1\n86286.0\t4\n86285.0\t5\n86284.0\t2\n86283.0\t4\n86282.0\t3\n86281.0\t3\n86280.0\t4\n86279.0\t6\n86278.0\t5\n86277.0\t8\n86276.0\t1\n86275.0\t4\n86274.0\t3\n86273.0\t5\n86272.0\t2\n86271.0\t4\n86270.0\t1\n86269.0\t2\n86268.0\t3\n86267.0\t3\n86266.0\t3\n86265.0\t6\n86264.0\t1\n86263.0\t3\n86262.0\t8\n86260.0\t2\n86259.0\t2\n86258.0\t5\n86257.0\t3\n86256.0\t4\n86255.0\t2\n86254.0\t5\n86253.0\t2\n86252.0\t2\n86251.0\t6\n86250.0\t4\n86249.0\t3\n86247.0\t1\n86246.0\t1\n86245.0\t4\n86243.0\t3\n86242.0\t2\n86241.0\t3\n86240.0\t3\n86239.0\t3\n86237.0\t1\n86236.0\t3\n86235.0\t2\n86234.0\t3\n86233.0\t3\n86232.0\t3\n86231.0\t1\n86230.0\t4\n86229.0\t4\n86228.0\t1\n86227.0\t3\n86226.0\t4\n86224.0\t2\n86222.0\t5\n86221.0\t4\n86220.0\t2\n86219.0\t5\n86218.0\t4\n86217.0\t3\n86216.0\t3\n86215.0\t4\n86214.0\t2\n86213.0\t1\n86212.0\t1\n86211.0\t2\n86210.0\t4\n86209.0\t7\n86208.0\t1\n86207.0\t1\n86206.0\t3\n86204.0\t5\n86203.0\t1\n86202.0\t2\n86201.0\t2\n86200.0\t1\n86199.0\t3\n86197.0\t2\n86196.0\t2\n86195.0\t1\n86194.0\t2\n86193.0\t5\n86192.0\t2\n86188.0\t4\n86186.0\t3\n86185.0\t2\n86184.0\t2\n86183.0\t3\n86181.0\t2\n86180.0\t1\n86179.0\t1\n86178.0\t1\n86177.0\t1\n86176.0\t1\n86175.0\t1\n86174.0\t2\n86173.0\t2\n86172.0\t4\n86171.0\t3\n86170.0\t2\n86169.0\t2\n86167.0\t2\n86166.0\t1\n86165.0\t2\n86164.0\t5\n86163.0\t3\n86162.0\t2\n86161.0\t2\n86160.0\t2\n86159.0\t2\n86158.0\t3\n86157.0\t4\n86156.0\t3\n86155.0\t2\n86154.0\t2\n86153.0\t3\n86152.0\t2\n86151.0\t4\n86150.0\t4\n86149.0\t2\n86148.0\t2\n86147.0\t1\n86146.0\t1\n86145.0\t4\n86144.0\t4\n86143.0\t1\n86142.0\t2\n86141.0\t2\n86140.0\t4\n86139.0\t1\n86138.0\t2\n86137.0\t2\n86136.0\t2\n86135.0\t2\n86133.0\t1\n86131.0\t1\n86129.0\t2\n86127.0\t4\n86126.0\t2\n86124.0\t3\n86123.0\t3\n86122.0\t2\n86121.0\t4\n86120.0\t1\n86119.0\t3\n86118.0\t2\n86117.0\t2\n86116.0\t1\n86115.0\t1\n86114.0\t2\n86112.0\t1\n86111.0\t1\n86110.0\t1\n86109.0\t1\n86108.0\t2\n86107.0\t2\n86105.0\t1\n86104.0\t1\n86103.0\t3\n86102.0\t1\n86101.0\t2\n86100.0\t1\n86099.0\t2\n86098.0\t2\n86097.0\t2\n86095.0\t2\n86094.0\t2\n86093.0\t1\n86091.0\t3\n86090.0\t2\n86088.0\t3\n86086.0\t3\n86084.0\t2\n86083.0\t2\n86082.0\t2\n86081.0\t2\n86080.0\t2\n86079.0\t2\n86078.0\t1\n86076.0\t3\n86075.0\t3\n86074.0\t4\n86073.0\t2\n86072.0\t2\n86071.0\t5\n86070.0\t4\n86068.0\t2\n86067.0\t2\n86065.0\t2\n86064.0\t1\n86063.0\t2\n86062.0\t2\n86060.0\t2\n86059.0\t1\n86058.0\t3\n86057.0\t1\n86056.0\t1\n86055.0\t3\n86054.0\t3\n86053.0\t1\n86052.0\t2\n86051.0\t1\n86050.0\t1\n86049.0\t1\n86048.0\t1\n86047.0\t1\n86046.0\t1\n86045.0\t2\n86044.0\t2\n86043.0\t1\n86040.0\t1\n86038.0\t2\n86037.0\t4\n86036.0\t3\n86035.0\t2\n86034.0\t3\n86033.0\t2\n86032.0\t1\n86030.0\t1\n86028.0\t1\n86027.0\t1\n86026.0\t1\n86021.0\t1\n86020.0\t2\n86019.0\t1\n86018.0\t1\n86017.0\t1\n86016.0\t3\n86014.0\t1\n86013.0\t1\n86012.0\t2\n86011.0\t2\n86010.0\t2\n86009.0\t3\n86008.0\t2\n86007.0\t3\n86005.0\t2\n86004.0\t1\n86003.0\t1\n86002.0\t2\n85998.0\t1\n85995.0\t2\n85994.0\t1\n85993.0\t3\n85992.0\t1\n85991.0\t2\n85988.0\t1\n85987.0\t2\n85985.0\t1\n85984.0\t1\n85983.0\t1\n85981.0\t3\n85979.0\t1\n85978.0\t1\n85977.0\t3\n85973.0\t2\n85972.0\t1\n85971.0\t1\n85970.0\t1\n85969.0\t1\n85968.0\t1\n85967.0\t1\n85966.0\t2\n85965.0\t1\n85964.0\t2\n85962.0\t3\n85961.0\t1\n85957.0\t1\n85956.0\t1\n85954.0\t4\n85950.0\t2\n85948.0\t1\n85946.0\t6\n85943.0\t1\n85942.0\t1\n85940.0\t2\n85938.0\t2\n85937.0\t3\n85936.0\t1\n85935.0\t2\n85934.0\t3\n85933.0\t1\n85932.0\t1\n85931.0\t1\n85929.0\t1\n85927.0\t2\n85926.0\t2\n85924.0\t1\n85921.0\t2\n85919.0\t2\n85918.0\t1\n85917.0\t3\n85915.0\t1\n85913.0\t1\n85911.0\t1\n85910.0\t1\n85909.0\t1\n85908.0\t2\n85907.0\t1\n85905.0\t2\n85904.0\t2\n85902.0\t2\n85901.0\t1\n85900.0\t1\n85899.0\t1\n85898.0\t1\n85895.0\t3\n85894.0\t1\n85893.0\t1\n85892.0\t1\n85891.0\t2\n85890.0\t1\n85889.0\t2\n85885.0\t1\n85883.0\t2\n85882.0\t2\n85881.0\t1\n85879.0\t1\n85878.0\t2\n85877.0\t1\n85876.0\t2\n85875.0\t1\n85874.0\t2\n85871.0\t1\n85870.0\t1\n85869.0\t1\n85867.0\t1\n85865.0\t1\n85864.0\t1\n85863.0\t1\n85862.0\t1\n85861.0\t1\n85859.0\t2\n85858.0\t2\n85857.0\t2\n85856.0\t3\n85855.0\t1\n85852.0\t1\n85851.0\t2\n85850.0\t3\n85848.0\t1\n85847.0\t2\n85846.0\t2\n85844.0\t1\n85842.0\t3\n85839.0\t1\n85837.0\t1\n85836.0\t2\n85835.0\t1\n85834.0\t1\n85832.0\t1\n85830.0\t1\n85829.0\t3\n85828.0\t2\n85825.0\t1\n85824.0\t2\n85823.0\t1\n85821.0\t2\n85820.0\t1\n85818.0\t3\n85817.0\t2\n85816.0\t1\n85811.0\t1\n85810.0\t2\n85809.0\t2\n85807.0\t2\n85806.0\t1\n85804.0\t1\n85803.0\t1\n85798.0\t1\n85793.0\t1\n85792.0\t1\n85788.0\t1\n85787.0\t1\n85786.0\t2\n85785.0\t1\n85784.0\t1\n85783.0\t1\n85782.0\t2\n85781.0\t1\n85780.0\t1\n85778.0\t1\n85776.0\t1\n85775.0\t2\n85773.0\t1\n85772.0\t1\n85771.0\t3\n85770.0\t1\n85766.0\t2\n85763.0\t1\n85757.0\t1\n85755.0\t2\n85754.0\t1\n85753.0\t2\n85751.0\t2\n85749.0\t2\n85746.0\t2\n85745.0\t2\n85744.0\t4\n85741.0\t2\n85740.0\t1\n85738.0\t1\n85737.0\t1\n85735.0\t2\n85734.0\t2\n85733.0\t1\n85727.0\t1\n85726.0\t2\n85724.0\t2\n85723.0\t2\n85721.0\t2\n85716.0\t1\n85709.0\t1\n85707.0\t1\n85705.0\t1\n85704.0\t1\n85703.0\t1\n85699.0\t1\n85698.0\t1\n85697.0\t2\n85696.0\t1\n85694.0\t2\n85693.0\t1\n85692.0\t1\n85691.0\t2\n85690.0\t1\n85684.0\t1\n85683.0\t3\n85681.0\t1\n85679.0\t1\n85678.0\t2\n85677.0\t2\n85676.0\t1\n85675.0\t1\n85674.0\t1\n85672.0\t1\n85671.0\t1\n85670.0\t1\n85669.0\t1\n85667.0\t1\n85665.0\t2\n85662.0\t1\n85658.0\t3\n85657.0\t2\n85656.0\t1\n85655.0\t1\n85652.0\t3\n85646.0\t1\n85645.0\t1\n85644.0\t1\n85643.0\t1\n85642.0\t2\n85641.0\t1\n85639.0\t1\n85638.0\t2\n85637.0\t1\n85634.0\t1\n85633.0\t1\n85632.0\t1\n85631.0\t1\n85622.0\t1\n85621.0\t1\n85620.0\t2\n85618.0\t1\n85615.0\t1\n85614.0\t1\n85613.0\t1\n85610.0\t1\n85609.0\t1\n85607.0\t1\n85602.0\t1\n85600.0\t1\n85599.0\t3\n85598.0\t1\n85596.0\t1\n85592.0\t1\n85591.0\t1\n85590.0\t1\n85588.0\t1\n85587.0\t1\n85584.0\t1\n85580.0\t1\n85579.0\t2\n85575.0\t2\n85573.0\t1\n85570.0\t1\n85569.0\t1\n85566.0\t3\n85565.0\t1\n85561.0\t2\n85560.0\t1\n85558.0\t2\n85557.0\t1\n85556.0\t2\n85555.0\t1\n85552.0\t1\n85551.0\t1\n85550.0\t2\n85549.0\t1\n85545.0\t4\n85544.0\t1\n85541.0\t1\n85540.0\t2\n85538.0\t1\n85537.0\t1\n85536.0\t1\n85534.0\t2\n85533.0\t1\n85531.0\t1\n85525.0\t2\n85522.0\t1\n85521.0\t2\n85520.0\t1\n85518.0\t1\n85516.0\t1\n85515.0\t1\n85514.0\t1\n85513.0\t3\n85511.0\t1\n85510.0\t1\n85504.0\t1\n85503.0\t1\n85499.0\t2\n85496.0\t1\n85492.0\t1\n85487.0\t1\n85485.0\t2\n85484.0\t1\n85481.0\t1\n85479.0\t1\n85476.0\t2\n85475.0\t1\n85474.0\t1\n85471.0\t3\n85464.0\t1\n85463.0\t1\n85462.0\t1\n85461.0\t1\n85460.0\t1\n85458.0\t1\n85456.0\t1\n85455.0\t2\n85445.0\t2\n85443.0\t1\n85442.0\t1\n85441.0\t2\n85435.0\t1\n85431.0\t2\n85430.0\t1\n85428.0\t2\n85425.0\t1\n85422.0\t1\n85420.0\t2\n85416.0\t1\n85415.0\t2\n85413.0\t1\n85412.0\t1\n85405.0\t1\n85402.0\t1\n85398.0\t1\n85396.0\t2\n85395.0\t1\n85394.0\t1\n85389.0\t2\n85386.0\t1\n85385.0\t2\n85383.0\t1\n85382.0\t2\n85381.0\t1\n85376.0\t1\n85371.0\t1\n85367.0\t1\n85356.0\t2\n85355.0\t1\n85350.0\t1\n85347.0\t1\n85344.0\t1\n85342.0\t1\n85341.0\t1\n85337.0\t1\n85336.0\t2\n85334.0\t1\n85333.0\t1\n85330.0\t2\n85326.0\t1\n85324.0\t1\n85321.0\t1\n85319.0\t1\n85314.0\t2\n85313.0\t1\n85311.0\t2\n85309.0\t2\n85305.0\t1\n85304.0\t1\n85299.0\t2\n85298.0\t1\n85297.0\t1\n85296.0\t1\n85295.0\t1\n85294.0\t1\n85287.0\t2\n85281.0\t1\n85280.0\t2\n85278.0\t1\n85275.0\t1\n85274.0\t1\n85273.0\t2\n85271.0\t1\n85270.0\t1\n85264.0\t1\n85263.0\t1\n85262.0\t1\n85258.0\t1\n85257.0\t1\n85255.0\t1\n85253.0\t1\n85252.0\t1\n85250.0\t1\n85244.0\t1\n85243.0\t1\n85240.0\t1\n85239.0\t2\n85237.0\t1\n85236.0\t1\n85229.0\t1\n85228.0\t1\n85227.0\t2\n85224.0\t1\n85220.0\t2\n85218.0\t1\n85213.0\t1\n85210.0\t1\n85203.0\t1\n85197.0\t2\n85196.0\t1\n85191.0\t1\n85190.0\t1\n85186.0\t1\n85184.0\t1\n85180.0\t2\n85171.0\t1\n85163.0\t1\n85162.0\t1\n85160.0\t1\n85157.0\t1\n85154.0\t2\n85152.0\t2\n85149.0\t1\n85129.0\t1\n85128.0\t1\n85127.0\t2\n85126.0\t1\n85117.0\t3\n85113.0\t1\n85112.0\t1\n85110.0\t1\n85102.0\t1\n85094.0\t1\n85092.0\t1\n85087.0\t1\n85082.0\t1\n85080.0\t1\n85075.0\t2\n85074.0\t2\n85073.0\t1\n85070.0\t1\n85067.0\t1\n85066.0\t1\n85062.0\t1\n85060.0\t1\n85057.0\t1\n85052.0\t1\n85051.0\t1\n85048.0\t1\n85036.0\t1\n85035.0\t1\n85034.0\t2\n85028.0\t1\n85025.0\t1\n85024.0\t2\n85022.0\t1\n85021.0\t1\n85019.0\t2\n85014.0\t1\n85012.0\t1\n85011.0\t1\n85007.0\t1\n85002.0\t1\n84998.0\t1\n84987.0\t1\n84985.0\t1\n84979.0\t1\n84977.0\t1\n84975.0\t1\n84970.0\t1\n84954.0\t1\n84943.0\t1\n84942.0\t1\n84940.0\t2\n84939.0\t3\n84922.0\t1\n84921.0\t1\n84920.0\t1\n84917.0\t1\n84916.0\t2\n84913.0\t2\n84910.0\t1\n84906.0\t1\n84904.0\t1\n84900.0\t1\n84896.0\t1\n84891.0\t1\n84890.0\t1\n84882.0\t1\n84876.0\t1\n84875.0\t1\n84874.0\t1\n84869.0\t1\n84860.0\t1\n84855.0\t1\n84848.0\t1\n84847.0\t1\n84845.0\t1\n84843.0\t1\n84842.0\t1\n84839.0\t1\n84838.0\t1\n84813.0\t2\n84810.0\t1\n84798.0\t1\n84795.0\t1\n84780.0\t1\n84776.0\t1\n84774.0\t1\n84772.0\t2\n84756.0\t1\n84754.0\t1\n84749.0\t1\n84741.0\t1\n84740.0\t1\n84736.0\t1\n84732.0\t1\n84731.0\t1\n84728.0\t1\n84721.0\t1\n84717.0\t1\n84711.0\t1\n84702.0\t3\n84691.0\t1\n84683.0\t1\n84682.0\t1\n84677.0\t1\n84660.0\t1\n84649.0\t1\n84645.0\t1\n84643.0\t1\n84637.0\t1\n84633.0\t1\n84631.0\t1\n84630.0\t1\n84628.0\t1\n84625.0\t1\n84620.0\t1\n84616.0\t1\n84615.0\t1\n84613.0\t1\n84612.0\t1\n84609.0\t1\n84604.0\t1\n84601.0\t1\n84600.0\t2\n84594.0\t2\n84593.0\t1\n84583.0\t1\n84582.0\t1\n84575.0\t1\n84574.0\t1\n84572.0\t1\n84564.0\t1\n84548.0\t1\n84545.0\t1\n84526.0\t1\n84514.0\t1\n84513.0\t1\n84489.0\t1\n84481.0\t1\n84471.0\t2\n84463.0\t1\n84456.0\t1\n84455.0\t2\n84454.0\t1\n84442.0\t1\n84441.0\t1\n84439.0\t1\n84434.0\t1\n84429.0\t1\n84427.0\t1\n84424.0\t1\n84407.0\t1\n84406.0\t1\n84404.0\t1\n84403.0\t1\n84397.0\t1\n84392.0\t1\n84389.0\t1\n84382.0\t1\n84356.0\t1\n84350.0\t2\n84348.0\t1\n84347.0\t1\n84345.0\t1\n84344.0\t1\n84339.0\t1\n84338.0\t1\n84336.0\t1\n84321.0\t2\n84318.0\t3\n84315.0\t1\n84313.0\t1\n84305.0\t1\n84301.0\t1\n84286.0\t1\n84284.0\t1\n84278.0\t1\n84275.0\t1\n84253.0\t1\n84248.0\t1\n84245.0\t1\n84243.0\t1\n84234.0\t1\n84226.0\t1\n84210.0\t1\n84192.0\t1\n84188.0\t1\n84182.0\t1\n84180.0\t1\n84173.0\t1\n84165.0\t1\n84155.0\t1\n84153.0\t1\n84152.0\t1\n84144.0\t1\n84141.0\t1\n84140.0\t1\n84133.0\t2\n84111.0\t1\n84106.0\t1\n84105.0\t1\n84104.0\t1\n84098.0\t1\n84097.0\t1\n84094.0\t1\n84093.0\t2\n84086.0\t1\n84081.0\t1\n84079.0\t1\n84070.0\t1\n84069.0\t1\n84068.0\t1\n84051.0\t1\n84047.0\t1\n84046.0\t1\n84040.0\t1\n84028.0\t1\n84026.0\t1\n84024.0\t1\n84003.0\t1\n84002.0\t1\n83990.0\t1\n83988.0\t1\n83979.0\t1\n83976.0\t1\n83974.0\t1\n83966.0\t1\n83947.0\t1\n83932.0\t1\n83929.0\t1\n83926.0\t1\n83924.0\t1\n83923.0\t1\n83913.0\t1\n83884.0\t1\n83877.0\t1\n83874.0\t1\n83863.0\t1\n83854.0\t1\n83821.0\t1\n83816.0\t1\n83808.0\t1\n83782.0\t1\n83768.0\t1\n83731.0\t1\n83728.0\t1\n83726.0\t2\n83721.0\t1\n83711.0\t1\n83689.0\t1\n83678.0\t1\n83663.0\t1\n83649.0\t1\n83642.0\t1\n83621.0\t1\n83617.0\t1\n83614.0\t1\n<!--TABLE_COMMENT-->\n<font color=red>Results are limited by 1000.</font>"
+            }]
+        },
+        "apps": [],
+        "jobName": "paragraph_1505398410290_-182214713",
+        "id": "20170905-075459_1850498088",
+        "dateCreated": "2017-09-14T14:13:30+0000",
+        "status": "READY",
+        "errorMessage": "",
+        "progressUpdateIntervalMs": 500,
+        "$$hashKey": "object:2509"
+    }, {
+        "text": "%pyspark\nimport random\nNUM_SAMPLES = 1000000\ndef guess_pojnt(p):\n    x, y = random.random(), random.random()\n    return x*x + y*y < 1\n\ncount = sc.parallelize(xrange(0, NUM_SAMPLES)).filter(guess_pojnt).count()\nprint \"Pi is roughly %f\" % (4.0 * count / NUM_SAMPLES)",
+        "dateUpdated": "2017-09-14T14:13:30+0000",
+        "config": {
+            "tableHide": false,
+            "editorSetting": {
+                "language": "text",
+                "editOnDblClick": false
+            },
+            "colWidth": 12,
+            "editorMode": "ace/mode/text",
+            "editorHide": false,
+            "results": {},
+            "enabled": true
+        },
+        "settings": {
+            "params": {},
+            "forms": {}
+        },
+        "results": {
+            "code": "SUCCESS",
+            "msg": [{
+                "type": "TEXT",
+                "data": "Pi is roughly 3.128784\n"
+            }]
+        },
+        "apps": [],
+        "jobName": "paragraph_1505398410291_-182599462",
+        "id": "20170911-140211_1881134532",
+        "dateCreated": "2017-09-14T14:13:30+0000",
+        "status": "READY",
+        "errorMessage": "",
+        "progressUpdateIntervalMs": 500,
+        "$$hashKey": "object:2510"
+    }, {
+        "text": "",
+        "dateUpdated": "2017-09-14T14:13:30+0000",
+        "config": {
+            "colWidth": 12,
+            "editorMode": "ace/mode/text",
+            "results": {},
+            "enabled": true,
+            "editorSetting": {
+                "language": "text",
+                "editOnDblClick": false
+            }
+        },
+        "settings": {
+            "params": {},
+            "forms": {}
+        },
+        "apps": [],
+        "jobName": "paragraph_1505398410291_-182599462",
+        "id": "20170911-165835_877905805",
+        "dateCreated": "2017-09-14T14:13:30+0000",
+        "status": "READY",
+        "errorMessage": "",
+        "progressUpdateIntervalMs": 500,
+        "$$hashKey": "object:2511"
+    }],
+    "name": "Notebook Test Template",
+    "id": "2CV85PPDE",
+    "angularObjects": {
+        "2CV449N31:shared_process": [],
+        "2CRV56568:shared_process": [],
+        "2CTK9JRN6:shared_process": [],
+        "2CSH9J2RS:shared_process": [],
+        "2CSJMZU9H:shared_process": [],
+        "2CTGR2QKX:shared_process": [],
+        "2CUY4J3ZQ:shared_process": [],
+        "2CTE8HXV8:shared_process": [],
+        "2CS8Z77AF:shared_process": [],
+        "2CS4QF466:shared_process": [],
+        "2CT8GS8MY:shared_process": [],
+        "2CRBM8VSK:shared_process": [],
+        "2CUKWF2WZ:shared_process": [],
+        "2CTVG2UTT:shared_process": [],
+        "2CS7UA4JA:shared_process": [],
+        "2CTS7KQTF:shared_process": [],
+        "2CTTMQ2Q1:shared_process": [],
+        "2CTEUJGV1:shared_process": [],
+        "2CT123HFY:shared_process": []
+    },
+    "config": {
+        "looknfeel": "default",
+        "personalizedMode": "false"
+    },
+    "info": {}
+}

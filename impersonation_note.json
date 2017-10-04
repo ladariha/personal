@@ -1,0 +1,68 @@
+{
+    "paragraphs": [{
+        "user": "anonymous",
+        "config": {
+            "colWidth": 12,
+            "enabled": true,
+            "results": {},
+            "editorSetting": {
+                "language": "scala",
+                "editOnDblClick": false
+            },
+            "editorMode": "ace/mode/scala"
+        },
+        "settings": {
+            "params": {},
+            "forms": {}
+        },
+        "apps": [],
+        "jobName": "paragraph_1507101430442_1012155999",
+        "id": "20171004-071710_1635918077",
+        "dateCreated": "2017-10-04T07:17:10+0000",
+        "progressUpdateIntervalMs": 500,
+        "focus": true,
+        "$$hashKey": "object:221",
+        "text": "printf(s\"User: '${sc.sparkUser}'\")",
+        "dateUpdated": "2017-10-04T07:17:57+0000",
+        "dateFinished": "2017-10-04T07:17:57+0000",
+        "dateStarted": "2017-10-04T07:17:57+0000"
+    }, {
+        "user": "anonymous",
+        "config": {
+            "colWidth": 12,
+            "enabled": true,
+            "results": {},
+            "editorSetting": {
+                "language": "scala",
+                "editOnDblClick": false
+            },
+            "editorMode": "ace/mode/scala"
+        },
+        "settings": {
+            "params": {},
+            "forms": {}
+        },
+        "apps": [],
+        "jobName": "paragraph_1507101477420_1626492723",
+        "id": "20171004-071757_952702816",
+        "dateCreated": "2017-10-04T07:17:57+0000",
+        "status": "READY",
+        "progressUpdateIntervalMs": 500,
+        "focus": true,
+        "$$hashKey": "object:380"
+    }],
+    "name": "impersonation",
+    "id": "2CVBUFF7A",
+    "angularObjects": {
+        "2CWP4TK3U:shared_process": [],
+        "2CTNHDRZM:shared_process": [],
+        "2CWS2Y34U:shared_process": [],
+        "2CVQYNFJC:shared_process": [],
+        "2CWEMZFG6:shared_process": []
+    },
+    "config": {
+        "looknfeel": "default",
+        "personalizedMode": "false"
+    },
+    "info": {}
+}
