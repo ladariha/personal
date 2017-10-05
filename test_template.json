@@ -81,7 +81,7 @@
         "$$hashKey": "object:2506"
     }, {
         "title": "HDFS permissions paragraph",
-        "text": "println(\"If the spark context is under a different user than 'bigdatamgr', this paragrapth should throw an error1.\\n-------------------------------------------------------------------------------------\\n\\n\")\nval pokus = sc.textFile(\"hdfs:///user/bigdatamgr/pokus\")\nprintln(s\"Number of lines: ${pokus.count()}\")",
+        "text": "println(\"If the spark context is under a different user than 'bigdatamgr', this paragrapth should throw an error1.\\n-------------------------------------------------------------------------------------\\n\\n\")\nval pokus = sc.textFile(\"hdfs:///user/bigdatamgr/bdNotePrivateFile\")\nprintln(s\"Number of lines: ${pokus.count()}\")",
         "config": {
             "tableHide": false,
             "editorSetting": {
