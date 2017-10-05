@@ -161,6 +161,7 @@
         "progressUpdateIntervalMs": 500,
         "$$hashKey": "object:2509"
     }, {
+        "title": "PySpark paragraph",
         "text": "%pyspark\nimport random\nNUM_SAMPLES = 1000000\ndef guess_pojnt(p):\n    x, y = random.random(), random.random()\n    return x*x + y*y < 1\n\ncount = sc.parallelize(xrange(0, NUM_SAMPLES)).filter(guess_pojnt).count()\nprint \"Pi is roughly %f\" % (4.0 * count / NUM_SAMPLES)",
         "config": {
             "tableHide": false,
@@ -186,6 +187,7 @@
         "progressUpdateIntervalMs": 500,
         "$$hashKey": "object:2510"
     }, {
+        "title": "Empty paragraph",
         "text": "",
         "config": {
             "colWidth": 12,
