@@ -170,6 +170,7 @@
                 "editOnDblClick": false
             },
             "colWidth": 12,
+            "title": true,
             "editorMode": "ace/mode/text",
             "editorHide": false,
             "results": {},
@@ -193,6 +194,7 @@
             "colWidth": 12,
             "editorMode": "ace/mode/text",
             "results": {},
+            "title": true,
             "enabled": true,
             "editorSetting": {
                 "language": "text",
