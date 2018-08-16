@@ -108,7 +108,7 @@
         "$$hashKey": "object:2507"
     }, {
         "title": "Scala paragraph (prepares the table for the SQL paragraph)",
-        "text": "val trainText = sc.textFile(\"hdfs:///tmp/noteFiles/train.csv\")\n\ncase class TaxiTrip(\n    id: String,\n    vendor_id: String,\n    pickup_datetime: String,\n    dropoff_datetime: String,\n    passenger_count: Integer,\n    pickup_longitude: String,\n    pickup_latitude: String,\n    dropoff_longitude: String,\n    dropoff_latitude: String,\n    store_and_fwd_flag: String,\n    trip_duration: Double\n)\n\nval trips = trainText\n    .map(s => s.split(\",\"))\n    .filter(s => s.size == 11)\n    .filter(s => s(0) != \"id\")\n    .map(s => TaxiTrip(\n            s(0),\n            s(1),\n            s(2),\n            s(3),\n            s(4).toInt,\n            s(5),\n            s(6),\n            s(7),\n            s(8),\n            s(9),\n            s(10).toDouble\n        )\n    )\n    .toDF()\ntrips.registerTempTable(\"trips\")\n",
+        "text": "val trainText = sc.textFile(\"hdfs:///tmp/noteFiles/train.csv\")\n\ncase class TaxiTrip(\n    id: String,\n    vendor_id: String,\n    pickup_datetime: String,\n    dropoff_datetime: String,\n    passenger_count: Integer,\n    pickup_longitude: String,\n    pickup_latitude: String,\n    dropoff_longitude: String,\n    dropoff_latitude: String,\n    store_and_fwd_flag: String,\n    trip_duration: Double\n)\n\nval trips = trainText.map(s => s.split(\",\")).filter(s => s.size == 11).filter(s => s(0) != \"id\").map(s => TaxiTrip(s(0),s(1),s(2),s(3),s(4).toInt,s(5),s(6),s(7),s(8),s(9),s(10).toDouble)).toDF()\ntrips.registerTempTable(\"trips\")\n",
         "config": {
             "lineNumbers": true,
             "tableHide": false,
