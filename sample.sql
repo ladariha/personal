@@ -1,0 +1,4 @@
+use default; 
+show tables;
+
+SELECT EMP_ID, LAST_NAME FROM EMPLOYEE_TBL WHERE EMP_ID = '333333333';
